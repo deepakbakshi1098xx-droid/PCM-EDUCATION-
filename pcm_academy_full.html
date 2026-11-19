@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070b16">
+<title>PCM Academy | Class 11</title>
+<style>
+:root{--bg:#070b16;--card:#101a2e;--card2:#0c1425;--line:#233653;--blue:#267cff;--cyan:#43d7ff;--white:#edf5ff;--muted:#a7b6ce;--green:#3bd6a0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#16345d 0,transparent 40%),var(--bg);color:var(--white);font:15px/1.65 Inter,system-ui,Segoe UI,Arial,sans-serif}button,input{font:inherit}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:#070b16ed;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:900;font-size:1.2rem;letter-spacing:-.5px}.brand span{color:var(--cyan)}nav{display:flex;gap:22px;color:var(--muted);font-size:.92rem}nav a:hover{color:white}.navright{display:flex;align-items:center;gap:10px}.btn{border:0;border-radius:10px;padding:10px 15px;font-weight:750;cursor:pointer}.primary{background:linear-gradient(100deg,#287fff,#155cc8);color:white}.outline{background:#111d32;color:#dceaff;border:1px solid var(--line)}.menu{display:none}
+.hero{padding:76px 0 58px;display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #28548b;background:#102342;color:#a8d4ff;border-radius:50px;padding:6px 12px;font-size:.8rem;font-weight:750}.pulse{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.04;letter-spacing:-2px;margin:20px 0}.grad{background:linear-gradient(90deg,#fff,#65baff,#54e1f4);background-clip:text;color:transparent}.lead{color:var(--muted);font-size:1.08rem;max-width:610px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.hero-panel{padding:25px;border-radius:22px;border:1px solid #2a4770;background:linear-gradient(145deg,#152b4b,#0d172a);box-shadow:0 25px 70px #0007}.hero-panel h3{margin:0}.hero-panel p{color:var(--muted);margin:4px 0 18px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:11px}.stat{background:#0a1426;border:1px solid var(--line);border-radius:13px;padding:14px}.stat b{display:block;font-size:1.55rem;color:var(--cyan)}.stat small{color:var(--muted)}
+section{padding:44px 0;scroll-margin-top:75px}.heading{margin-bottom:22px}.heading h2{font-size:2rem;letter-spacing:-.7px;margin:0}.heading p{color:var(--muted);margin:4px 0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.subject,.panel{background:linear-gradient(150deg,#121f37,#0c1528);border:1px solid var(--line);border-radius:17px;padding:21px}.subject{transition:.2s}.subject:hover{transform:translateY(-3px);border-color:#367fd7}.icon{width:46px;height:46px;display:grid;place-items:center;background:#12335b;border-radius:13px;color:#a7e7ff;font-size:1.5rem}.subject h3{margin:12px 0 3px}.subject p{color:var(--muted);font-size:.9rem;margin:0 0 12px}.chip{display:inline-block;border-radius:7px;background:#112a49;color:#a9d5ff;padding:4px 8px;font-size:.75rem}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 17px}.toolbar input,.toolbar select,.loginbox input{background:#0b1425;border:1px solid var(--line);color:white;padding:11px 13px;border-radius:10px;outline:none}.toolbar input{flex:1;min-width:180px}.toolbar select{min-width:150px}.chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.chapter-card{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:17px}.chapter-card h3{font-size:1rem;margin:0 0 4px}.chapter-card p{font-size:.83rem;color:var(--muted);margin:0 0 12px}.chapter-card button{background:#15365f;color:#bce7ff;border:1px solid #28517d;border-radius:8px;padding:7px 10px;cursor:pointer}.chapter-card button:hover{background:#1c4b80}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.list{display:grid;gap:9px}.row{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#111e33;border:1px solid #203653;padding:11px 13px;border-radius:10px}.row span{font-size:.9rem}.row button{border:0;border-radius:7px;background:#173d6b;color:#c9e9ff;padding:6px 10px;cursor:pointer}
+.quizbox{background:linear-gradient(120deg,#10294c,#101a2e);border:1px solid #2b4e7d;border-radius:18px;padding:22px}.quizbox p{color:var(--muted)}.options{display:flex;gap:10px;flex-wrap:wrap}.options button{background:#0b1528;border:1px solid #345078;color:white;padding:9px 13px;border-radius:9px;cursor:pointer}.options button:hover{border-color:var(--cyan)}#feedback{min-height:28px;color:var(--cyan);font-weight:700;margin-top:12px}
+.modal{display:none;position:fixed;inset:0;z-index:50;background:#000b;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modal-card{width:min(650px,100%);max-height:85vh;overflow:auto;background:#101b30;border:1px solid #345078;border-radius:18px;padding:24px;position:relative}.close{position:absolute;right:16px;top:12px;background:#1a2a43;border:0;color:white;border-radius:8px;padding:5px 10px;cursor:pointer}.modal-card h2{padding-right:65px}.modal-card p,.modal-card li{color:#c0cee2}.formula{padding:10px 13px;background:#0a1426;border:1px solid var(--line);border-radius:9px;margin:9px 0;color:#8ee3ff;font-weight:650}.loginbox{display:grid;gap:12px}.loginbox input{width:100%}.note{font-size:.8rem;color:#8ea2c1}
+footer{margin-top:35px;border-top:1px solid var(--line);padding:25px 0;color:var(--muted)}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:800px){nav{display:none;position:absolute;top:70px;left:0;right:0;background:#0b1425;padding:17px 5%;flex-direction:column;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu{display:inline-block}.hero{grid-template-columns:1fr;padding:55px 0 35px}.grid3,.chapters{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
+@media(max-width:520px){.grid3,.chapters{grid-template-columns:1fr}.navright .loginbtn{display:none}h1{letter-spacing:-1.2px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#home">PCM <span>ACADEMY</span></a>
+<nav id="nav"><a href="#home">Home</a><a href="#subjects">Subjects</a><a href="#chapters">Chapters</a><a href="#resources">Resources</a><a href="#quiz">Quiz</a></nav>
+<div class="navright"><button class="btn outline loginbtn" onclick="openLogin()">Student login</button><button class="btn outline menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button></div>
+</div></header>
+<main>
+<div class="wrap hero" id="home">
+<div><div class="pill"><i class="pulse"></i> CLASS 11 · PHYSICS · CHEMISTRY · MATHS</div>
+<h1>Learn smarter.<br><span class="grad">Aim higher.</span></h1>
+<p class="lead">Welcome to PCM Academy — your study space for Class 11 Physics, Chemistry and Mathematics. Build concepts, revise formulas and practise questions at your own pace.</p>
+<div class="actions"><a class="btn primary" href="#subjects">Explore subjects →</a><a class="btn outline" href="#quiz">Take a quick quiz</a></div></div>
+<div class="hero-panel"><h3>Your learning dashboard</h3><p>Small daily progress builds strong foundations.</p><div class="stats"><div class="stat"><b>03</b><small>Core subjects</small></div><div class="stat"><b>11</b><small>Class level</small></div><div class="stat"><b>24/7</b><small>Learn anytime</small></div><div class="stat"><b>∞</b><small>Keep exploring</small></div></div></div>
+</div>
+<section id="subjects"><div class="wrap"><div class="heading"><h2>Explore subjects</h2><p>Choose a subject to browse its starter topics and learning resources.</p></div>
+<div class="grid3">
+<article class="subject"><div class="icon">⚛</div><h3>Physics</h3><p>Motion, laws of motion, work, energy and the physical world.</p><span class="chip">Concepts · Numericals · Formulae</span></article>
+<article class="subject"><div class="icon">🧪</div><h3>Chemistry</h3><p>Atoms, periodicity, bonding, states of matter and reactions.</p><span class="chip">Theory · Equations · Practice</span></article>
+<article class="subject"><div class="icon">∑</div><h3>Mathematics</h3><p>Sets, functions, algebra, trigonometry, coordinate geometry and more.</p><span class="chip">Examples · Methods · Practice</span></article>
+</div></div></section>
+<section id="chapters"><div class="wrap"><div class="heading"><h2>Chapter library</h2><p>Search a chapter and open its short starter notes.</p></div>
+<div class="toolbar"><input id="search" placeholder="Search chapters..." oninput="renderChapters()"><select id="subjectFilter" onchange="renderChapters()"><option>All subjects</option><option>Physics</option><option>Chemistry</option><option>Mathematics</option></select></div>
+<div class="chapters" id="chapterList"></div>
+<p class="note">This is a starter library, not a complete textbook. Chapter titles/order can vary by board and syllabus. Use your school’s current syllabus as the final guide.</p>
+</div></section>
+<section id="resources"><div class="wrap"><div class="heading"><h2>Study resources</h2><p>Quick revision material to help you get started.</p></div>
+<div class="two">
+<div class="panel"><h3>⚡ Physics formula sheet</h3><div class="list">
+<div class="row"><span>Velocity</span><button onclick="showResource('velocity')">View</button></div>
+<div class="row"><span>Acceleration</span><button onclick="showResource('acceleration')">View</button></div>
+<div class="row"><span>Equations of motion</span><button onclick="showResource('motion')">View</button></div>
+<div class="row"><span>Newton’s second law</span><button onclick="showResource('newton')">View</button></div>
+</div></div>
+<div class="panel"><h3>🎯 JEE preparation corner</h3><p style="color:var(--muted)">Start with NCERT concepts, practise examples, then gradually attempt mixed and timed questions. Focus on understanding rather than memorising solutions.</p><div class="formula">Concept → Solved example → Practice → Revision</div><p class="note">The questions below are original practice examples, not claimed as past JEE questions.</p><button class="btn primary" onclick="showResource('jee')">Open practice question</button></div>
+</div></div></section>
+<section id="quiz"><div class="wrap"><div class="heading"><h2>Quick quiz</h2><p>Try a few starter questions from PCM.</p></div>
+<div class="quizbox"><div id="qcount" class="chip">Question 1 of 3</div><h3 id="question">If velocity is constant, acceleration is:</h3><p>Select the correct answer.</p><div class="options" id="options"></div><div id="feedback" aria-live="polite"></div><button class="btn outline" id="next" onclick="nextQuestion()" style="display:none">Next question →</button></div>
+</div></section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 PCM Academy</span><span>Learn · Practise · Improve</span></div></footer>
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="modal-card"><button class="close" onclick="closeModal()">✕</button><div id="modalContent"></div></div></div>
+<script>
+const chapters=[
+['Physics','Units and Measurements','Physical quantities, SI units, dimensions and measurement errors.'],
+['Physics','Motion in a Straight Line','Position, displacement, velocity, acceleration and motion graphs.'],
+['Physics','Motion in a Plane','Vectors, projectile motion and uniform circular motion.'],
+['Physics','Laws of Motion','Newton’s laws, inertia, momentum and friction.'],
+['Physics','Work, Energy and Power','Work, kinetic energy, potential energy and conservation.'],
+['Physics','System of Particles and Rotational Motion','Centre of mass, torque and angular motion.'],
+['Chemistry','Some Basic Concepts of Chemistry','Mole concept, stoichiometry and concentration terms.'],
+['Chemistry','Structure of Atom','Subatomic particles, atomic models and electronic structure.'],
+['Chemistry','Classification of Elements','Periodic table, groups, periods and periodic trends.'],
+['Chemistry','Chemical Bonding and Molecular Structure','Ionic and covalent bonds, Lewis structures and molecular shape.'],
+['Chemistry','Chemical Thermodynamics','System, surroundings, enthalpy and thermochemical ideas.'],
+['Chemistry','Equilibrium','Chemical equilibrium, acids, bases and ionic equilibrium.'],
+['Mathematics','Sets','Set notation, subsets, operations and Venn diagrams.'],
+['Mathematics','Relations and Functions','Ordered pairs, domain, range and types of functions.'],
+['Mathematics','Trigonometric Functions','Angles, identities, graphs and trigonometric equations.'],
+['Mathematics','Complex Numbers and Quadratic Equations','Imaginary unit, algebra of complex numbers and roots.'],
+['Mathematics','Linear Inequalities','Solving inequalities and representing solution sets.'],
+['Mathematics','Permutations and Combinations','Fundamental counting principle, arrangements and selections.'],
+['Mathematics','Binomial Theorem','Expansion, general term and binomial coefficients.'],
+['Mathematics','Sequences and Series','Arithmetic and geometric progressions and their sums.']
+];
+function renderChapters(){let q=document.getElementById('search').value.toLowerCase(),f=document.getElementById('subjectFilter').value;let list=chapters.filter(c=>(f==='All subjects'||c[0]===f)&&(c[1]+' '+c[2]).toLowerCase().includes(q));document.getElementById('chapterList').innerHTML=list.length?list.map(c=>`<article class="chapter-card"><span class="chip">${c[0]}</span><h3>${c[1]}</h3><p>${c[2]}</p><button onclick="openChapter('${c[0]}','${c[1].replace(/'/g,"\\'")}','${c[2].replace(/'/g,"\\'")}')">Open notes</button></article>`).join(''):'<p>No matching chapters found.</p>'}
+function openChapter(s,t,d){document.getElementById('modalContent').innerHTML=`<span class="chip">${s} · Class 11</span><h2>${t}</h2><p>${d}</p><h3>How to study this chapter</h3><ul><li>Read the textbook definitions and understand each concept.</li><li>Write important terms and formulae in your notebook.</li><li>Work through solved examples before attempting exercises.</li><li>Revise mistakes and practise similar questions.</li></ul><p class="note">These are introductory study pointers. Add your class notes and prescribed textbook material for complete chapter coverage.</p>`;openModal()}
+const resources={
+velocity:['Velocity','Average velocity = Displacement / Total time','v̄ = (x₂ − x₁) / (t₂ − t₁)','SI unit: m/s. Velocity is a vector quantity.'],
+acceleration:['Acceleration','Average acceleration = Change in velocity / Time taken','ā = (v − u) / t','SI unit: m/s².'],
+motion:['Equations of uniformly accelerated motion','v = u + at','s = ut + ½at²','v² = u² + 2as','Use these equations only when acceleration is constant.'],
+newton:['Newton’s second law','Force = mass × acceleration','F = ma','SI unit of force: newton (N).'],
+jee:['JEE-style practice (original)','A body starts from rest and moves with uniform acceleration 2 m/s². Find its velocity after 5 s.','Use: v = u + at.','Answer: v = 0 + 2 × 5 = 10 m/s. Try solving it yourself before opening the solution next time.']
+};
+function showResource(k){let r=resources[k];document.getElementById('modalContent').innerHTML=`<h2>${r[0]}</h2>${r.slice(1).map(x=>`<div class="formula">${x}</div>`).join('')}`;openModal()}
+function openModal(){document.getElementById('modal').classList.add('show')}function closeModal(){document.getElementById('modal').classList.remove('show')}
+function openLogin(){document.getElementById('modalContent').innerHTML=`<h2>Student login</h2><p>This is a local demo form. It does not create an online account or securely save passwords.</p><form class="loginbox" onsubmit="event.preventDefault();document.getElementById('loginMsg').textContent='Demo sign-in submitted. Online accounts are not connected yet.'"><input required placeholder="Student name"><input required type="email" placeholder="Email address"><button class="btn primary">Continue (demo)</button><div id="loginMsg" class="note"></div></form>`;openModal()}
+const questions=[{q:'If velocity is constant, acceleration is:',o:['Increasing','Zero','Negative always','Infinite'],a:1,e:'Acceleration is the rate of change of velocity. Constant velocity means no change.'},{q:'The SI unit of force is:',o:['Joule','Watt','Newton','Pascal'],a:2,e:'Force is measured in newtons (N). From F = ma, its base unit is kg·m/s².'},{q:'The value of i² is:',o:['1','−1','0','i'],a:1,e:'The imaginary unit i is defined by i² = −1.'}];let qi=0,score=0,locked=false;
+function loadQuestion(){let q=questions[qi];document.getElementById('qcount').textContent=`Question ${qi+1} of ${questions.length} · Score ${score}`;document.getElementById('question').textContent=q.q;document.getElementById('feedback').textContent='';document.getElementById('next').style.display='none';locked=false;document.getElementById('options').innerHTML=q.o.map((x,i)=>`<button onclick="choose(${i})">${String.fromCharCode(65+i)}. ${x}</button>`).join('')}
+function choose(i){if(locked)return;locked=true;let q=questions[qi],ok=i===q.a;if(ok)score++;document.getElementById('feedback').textContent=(ok?'Correct! ':'Not quite. ')+q.e;document.querySelectorAll('#options button').forEach((b,j)=>{b.disabled=true;if(j===q.a)b.style.borderColor='#3bd6a0'});document.getElementById('qcount').textContent=`Question ${qi+1} of ${questions.length} · Score ${score}`;document.getElementById('next').textContent=qi===questions.length-1?'See result':'Next question →';document.getElementById('next').style.display='inline-block'}
+function nextQuestion(){if(qi<questions.length-1){qi++;loadQuestion()}else{document.getElementById('question').textContent=`Quiz complete! Your score: ${score}/${questions.length}`;document.getElementById('options').innerHTML='';document.getElementById('feedback').textContent='Keep practising and come back to improve your score.';document.getElementById('next').textContent='Try again';document.getElementById('next').onclick=()=>{qi=0;score=0;document.getElementById('next').onclick=nextQuestion;loadQuestion()}}}
+renderChapters();loadQuestion();
+</script>
+</body></html>
